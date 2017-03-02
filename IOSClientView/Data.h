@@ -16,6 +16,13 @@
     UIColor *viewText;
     UIColor *labelText;
     UIColor *voiceView;
+    
+    NSString *ip_address;
+    int port_address;
+    BOOL isConnect;
+    
+    NSString *outputString;
+    NSString *voiceString;
 }
 @property (nonatomic) int language_select;
 @property (nonatomic) int mode_select;
@@ -24,6 +31,11 @@
 @property (strong,nonatomic) UIColor *viewText;
 @property (strong,nonatomic) UIColor *labelText;
 @property (strong,nonatomic) UIColor *voiceView;
+@property (strong,nonatomic) NSString *ip_address;
+@property (strong,nonatomic) NSString *outputString;
+@property (strong,nonatomic) NSString *voiceString;
+@property (nonatomic) int port_address;
+@property (nonatomic) BOOL isConnect;
 +(Data *)sharedInstance;
 -(void)changeMode:(int)mode;
 @end

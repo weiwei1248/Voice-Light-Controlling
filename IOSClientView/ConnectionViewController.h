@@ -12,11 +12,10 @@
 @interface ConnectionViewController : UIViewController  <NSStreamDelegate,SpeechToTextModuleDelegate>
 {
     @public
-    BOOL isConnect;
 }
 -(void)stream:(NSStream *)theStream handleEvent:(NSStreamEvent)streamEvent;
 @property(nonatomic, strong)SpeechToTextModule *speechToTextObj;
-@property(nonatomic)BOOL isConnect;
+
 -(void)scrollTextToBottom;
 -(void)setBackgroundmode;
 

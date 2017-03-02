@@ -14,6 +14,7 @@
     __weak IBOutlet UITextView *text_Receive;
     __weak IBOutlet UITextField *text_port;
     __weak IBOutlet UITextField *text_host;
+    __weak IBOutlet UIButton *btn_connect;
     
     __weak IBOutlet UILabel *status_label;
     __weak IBOutlet UILabel *result_label;
@@ -25,16 +26,20 @@
 
 @implementation ConnectionViewController
 
-@synthesize isConnect;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.speechToTextObj = [[SpeechToTextModule alloc] initWithCustomDisplay:@"SineWaveViewController"];
     [self.speechToTextObj setDelegate:self];
-    text_Receive.text=@"There's no connection.\n";
-    isConnect=NO;
-    NSTimer *timer=[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(scrollTextToBottom) userInfo:nil repeats:YES];
+    NSTimer *timer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(scrollTextToBottom) userInfo:nil repeats:YES];
     [timer setFireDate:[NSDate distantPast]];
+    if([Data sharedInstance].isConnect==YES)
+    {
+        [btn_connect setEnabled:NO];
+        text_host.text=[Data sharedInstance].ip_address;
+        text_port.text=[NSString stringWithFormat:@"%d",[Data sharedInstance].port_address];
+        [self connect];
+    }
     [self setBackgroundmode];
     
 }
@@ -57,7 +62,7 @@
 
 - (IBAction)connectButtonTapped:(UIButton *)sender
 {
-    text_Receive.text=@"Searching server...\n";
+    [Data sharedInstance].outputString=@"Searching server...\n";
     [self connect];
 }
 
@@ -71,8 +76,9 @@
     switch(streamEvent)
     {
         case NSStreamEventOpenCompleted:
-            text_Receive.text=@"Connect successfully.\nYou can speaking now.\n";
-            isConnect=YES;
+            [Data sharedInstance].outputString=@"Connect successfully.\nYou can speaking now.\n";
+            [Data sharedInstance].isConnect=YES;
+            [btn_connect setEnabled:NO];
             break;
         case NSStreamEventHasBytesAvailable:
             if(theStream==self.inputStream)
@@ -87,21 +93,21 @@
                         NSString *output=[[NSString alloc] initWithBytes:buffer length:len encoding:NSASCIIStringEncoding];
                         if(nil!=output)
                         {
-                            text_Receive.text=[text_Receive.text stringByAppendingFormat:@"Server: %@\n",output];
+                            [Data sharedInstance].outputString=[[Data sharedInstance].outputString stringByAppendingFormat:@"Server: %@\n",output];
                         }
                     }
                 }
             }
             break;
         case NSStreamEventErrorOccurred:
-            text_Receive.text=@"Cannot connect to the server.\nIP address or PORT address is wrong!";
+            [Data sharedInstance].outputString=@"Cannot connect to the server.\nIP address or PORT address is wrong!";
             break;
         case NSStreamEventEndEncountered:
-            text_Receive.text=[text_Receive.text stringByAppendingFormat:@"Connection is closed.\n"];
+            [Data sharedInstance].outputString=[[Data sharedInstance].outputString stringByAppendingFormat:@"Connection is closed.\n"];
             [theStream close];
             [theStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
             theStream=nil;
-            isConnect=NO;
+            [Data sharedInstance].isConnect=NO;
             break;
         default:
             break;
@@ -110,19 +116,16 @@
 
 -(void)connect
 {
-    NSString *ip_address;
-    int port_address=0;
-    ip_address=text_host.text;
-    port_address=[text_port.text intValue];
+    [Data sharedInstance].ip_address=text_host.text;
+    [Data sharedInstance].port_address=[text_port.text intValue];
     
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
     
-    CFStreamCreatePairWithSocketToHost(NULL,(__bridge CFStringRef)ip_address,port_address,&readStream,&writeStream);
+    CFStreamCreatePairWithSocketToHost(NULL,(__bridge CFStringRef)[Data sharedInstance].ip_address,[Data sharedInstance].port_address,&readStream,&writeStream);
     
     self.inputStream = (__bridge_transfer NSInputStream *)readStream;
     self.outputStream = (__bridge_transfer NSOutputStream*)writeStream;
-    
     
     [self.inputStream setDelegate:self];
     [self.outputStream setDelegate:self];
@@ -148,7 +151,7 @@
 //            break;
 //    }
     [self.outputStream write:[data bytes] maxLength:[data length]];
-    text_Receive.text=[text_Receive.text stringByAppendingFormat:@"Message: (%@) is sending.\n",string];
+    [Data sharedInstance].outputString=[[Data sharedInstance].outputString stringByAppendingFormat:@"Message: (%@) is sending.\n",string];
 }
 
 /*VOICE TEXT*/
@@ -168,8 +171,10 @@
         NSDictionary *speech = [[[arrResult objectAtIndex:0] valueForKey:@"alternative"]objectAtIndex:0];
         finalSpeech = [speech objectForKey:@"transcript"];
     }
-    text_Voice.text=[text_Voice.text stringByAppendingFormat:@"%@\n", finalSpeech];
-    if(isConnect==YES)
+    
+    [Data sharedInstance].voiceString=[text_Voice.text stringByAppendingFormat:@"%@\n", finalSpeech];
+    
+    if([Data sharedInstance].isConnect==YES)
     {
         [self sendMessage:finalSpeech];
     }
@@ -188,6 +193,10 @@
         NSRange bottom=NSMakeRange(text_Voice.text.length-1, 1);
         [text_Voice scrollRangeToVisible:bottom];
     }
+    
+    text_Voice.text=[Data sharedInstance].voiceString;
+    text_Receive.text=[Data sharedInstance].outputString;
+
 }
 
 @end

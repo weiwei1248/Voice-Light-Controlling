@@ -15,6 +15,11 @@
 @synthesize mainView;
 @synthesize textView;
 @synthesize voiceView;
+@synthesize ip_address;
+@synthesize port_address;
+@synthesize isConnect;
+@synthesize outputString;
+@synthesize voiceString;
 -(id)init
 {
     if(self=[super init])
@@ -26,6 +31,9 @@
         labelText=[UIColor whiteColor];
         mainView=[UIColor whiteColor];
         voiceView=[UIColor whiteColor];
+        port_address=0;
+        isConnect=NO;
+        outputString=@"There is no connection.";
     }
     return self;
 }
