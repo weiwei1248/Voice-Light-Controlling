@@ -53,8 +53,8 @@
 		926777511E54CA3100930A71 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		926777531E54CA4400930A71 /* ConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionViewController.m; sourceTree = "<group>"; };
 		926777551E54CA4E00930A71 /* ConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionViewController.h; sourceTree = "<group>"; };
-		926777561E54CAA300930A71 /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Data.h; path = SpeechToTextDemo/Data.h; sourceTree = "<group>"; };
-		926777571E54CAAB00930A71 /* Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Data.m; path = SpeechToTextDemo/Data.m; sourceTree = "<group>"; };
+		926777561E54CAA300930A71 /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
+		926777571E54CAAB00930A71 /* Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data.m; sourceTree = "<group>"; };
 		B33E33AD185E27C5005962B9 /* SpeechToTextModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeechToTextModule.h; sourceTree = "<group>"; };
 		B33E33AE185E27C5005962B9 /* SpeechToTextModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeechToTextModule.m; sourceTree = "<group>"; };
 		B33E33AF185E27C5005962B9 /* SineWaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SineWaveViewController.h; sourceTree = "<group>"; };
@@ -113,6 +113,7 @@
 				926777571E54CAAB00930A71 /* Data.m */,
 			);
 			name = "Data references";
+			path = IOSClientView;
 			sourceTree = "<group>";
 		};
 		B33E33AC185E27A7005962B9 /* SpeechToText */ = {
@@ -180,8 +181,7 @@
 				B3FFFF60185E0B390008EC39 /* Images.xcassets */,
 				B3FFFF4F185E0B390008EC39 /* Supporting Files */,
 			);
-			name = IOSClientView;
-			path = SpeechToTextDemo;
+			path = IOSClientView;
 			sourceTree = "<group>";
 		};
 		B3FFFF4F185E0B390008EC39 /* Supporting Files */ = {
@@ -435,12 +435,12 @@
 					"$(SOURCE_ROOT)/SpeechToText",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SpeechToTextDemo/IOSClient-Prefix.pch";
+				GCC_PREFIX_HEADER = "IOSClientView/IOSClient-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				INFOPLIST_FILE = "SpeechToTextDemo/IOSClient-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/IOSClientView/IOSClient-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
@@ -467,12 +467,12 @@
 					"$(SOURCE_ROOT)/SpeechToText",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SpeechToTextDemo/IOSClient-Prefix.pch";
+				GCC_PREFIX_HEADER = "IOSClientView/IOSClient-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				INFOPLIST_FILE = "SpeechToTextDemo/IOSClient-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/IOSClientView/IOSClient-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
