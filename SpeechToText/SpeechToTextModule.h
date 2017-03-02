@@ -2,8 +2,7 @@
 //  VoiceAddModule.h
 //  AstridiPhone
 //
-//  Created by Sam Bosley on 10/7/11.
-//  Copyright (c) 2011 Todoroo. All rights reserved.
+//  Created by JUNWEI WU on 2017-02-15.
 //
 
 #import <Foundation/Foundation.h>

@@ -31,8 +31,6 @@
 		B3FFFF68185E0B3A0008EC39 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FFFF67185E0B3A0008EC39 /* XCTest.framework */; };
 		B3FFFF69185E0B3A0008EC39 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FFFF48185E0B390008EC39 /* Foundation.framework */; };
 		B3FFFF6A185E0B3A0008EC39 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FFFF4C185E0B390008EC39 /* UIKit.framework */; };
-		B3FFFF72185E0B3A0008EC39 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3FFFF70185E0B3A0008EC39 /* InfoPlist.strings */; };
-		B3FFFF74185E0B3A0008EC39 /* SpeechToTextDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FFFF73185E0B3A0008EC39 /* SpeechToTextDemoTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,9 +79,6 @@
 		B3FFFF60185E0B390008EC39 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B3FFFF66185E0B3A0008EC39 /* IOSClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FFFF67185E0B3A0008EC39 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		B3FFFF6F185E0B3A0008EC39 /* IOSClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IOSClientTests-Info.plist"; sourceTree = "<group>"; };
-		B3FFFF71185E0B3A0008EC39 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B3FFFF73185E0B3A0008EC39 /* SpeechToTextDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeechToTextDemoTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +138,6 @@
 				926777591E54D2D300930A71 /* Data references */,
 				B33E33AC185E27A7005962B9 /* SpeechToText */,
 				B3FFFF4E185E0B390008EC39 /* IOSClientView */,
-				B3FFFF6D185E0B3A0008EC39 /* SpeechToTextDemoTests */,
 				B3FFFF47185E0B390008EC39 /* Frameworks */,
 				B3FFFF46185E0B390008EC39 /* Products */,
 			);
@@ -198,24 +192,6 @@
 				B3FFFF54185E0B390008EC39 /* main.m */,
 				B3FFFF56185E0B390008EC39 /* IOSClient-Prefix.pch */,
 				923887B01E5505EC005ECF50 /* Launch Screen.storyboard */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B3FFFF6D185E0B3A0008EC39 /* SpeechToTextDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				B3FFFF73185E0B3A0008EC39 /* SpeechToTextDemoTests.m */,
-				B3FFFF6E185E0B3A0008EC39 /* Supporting Files */,
-			);
-			path = SpeechToTextDemoTests;
-			sourceTree = "<group>";
-		};
-		B3FFFF6E185E0B3A0008EC39 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				B3FFFF6F185E0B3A0008EC39 /* IOSClientTests-Info.plist */,
-				B3FFFF70185E0B3A0008EC39 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -314,7 +290,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3FFFF72185E0B3A0008EC39 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +317,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3FFFF74185E0B3A0008EC39 /* SpeechToTextDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,14 +345,6 @@
 				B3FFFF5B185E0B390008EC39 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B3FFFF70185E0B3A0008EC39 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B3FFFF71185E0B3A0008EC39 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -2,8 +2,7 @@
 //  ViewController.h
 //  SpeechToTextDemo
 //
-//  Created by Muhammad Zeeshan on 12/15/13.
-//  Copyright (c) 2013 Muhammad Zeeshan. All rights reserved.
+//  Created by JUNWEI WU on 2017-02-15.
 //
 
 #import <UIKit/UIKit.h>

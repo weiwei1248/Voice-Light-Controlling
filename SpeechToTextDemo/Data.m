@@ -2,20 +2,30 @@
 //  Data.m
 //  IOSClient
 //
-//  Created by Vian on 2017-02-15.
-//  Copyright © 2017 Muhammad Zeeshan. All rights reserved.
+//  Created by JUNWEI WU on 2017-02-15.
 //
 
 #import "Data.h"
 
 @implementation Data
 @synthesize language_select;
-
+@synthesize mode_select;
+@synthesize viewText;
+@synthesize labelText;
+@synthesize mainView;
+@synthesize textView;
+@synthesize voiceView;
 -(id)init
 {
     if(self=[super init])
     {
         language_select=0;
+        mode_select=0;
+        textView=[UIColor blackColor];
+        viewText=[UIColor blackColor];
+        labelText=[UIColor whiteColor];
+        mainView=[UIColor whiteColor];
+        voiceView=[UIColor whiteColor];
     }
     return self;
 }
@@ -28,5 +38,28 @@
         _sharedInstace=[[Data alloc] init];
     }
     return _sharedInstace;
+}
+
+-(void)changeMode:(int)mode
+{
+    mode_select=mode;
+    switch (mode) {
+        case 0:                           //day
+            textView=[UIColor blackColor];
+            viewText=[UIColor blackColor];
+            labelText=[UIColor whiteColor];
+            mainView=[UIColor whiteColor];
+            voiceView=[UIColor blackColor];
+            break;
+        case 1:                           //night
+            textView=[UIColor whiteColor];
+            viewText=[UIColor whiteColor];
+            labelText=[UIColor blackColor];
+            mainView=[UIColor blackColor];
+            voiceView=[UIColor blackColor];
+            break;
+        default:
+            break;
+    }
 }
 @end

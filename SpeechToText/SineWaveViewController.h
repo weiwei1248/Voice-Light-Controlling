@@ -2,8 +2,7 @@
 //  SineWaveViewController.h
 //  SpeechToText
 //
-//  Created by Sam Bosley on 10/11/11.
-//  Copyright (c) 2011 Astrid. All rights reserved.
+//  Created by JUNWEI WU on 2017-02-15.
 //
 
 #import <UIKit/UIKit.h>

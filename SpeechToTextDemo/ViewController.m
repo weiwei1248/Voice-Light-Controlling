@@ -2,14 +2,17 @@
 //  ViewController.m
 //  SpeechToTextDemo
 //
-//  Created by Muhammad Zeeshan on 12/15/13.
-//  Copyright (c) 2013 Muhammad Zeeshan. All rights reserved.
+//  Created by JUNWEI WU on 2017-02-15.
 //
 #import "ViewController.h"
 
 @interface ViewController ()
 {
     __weak IBOutlet UITextView *voiceText;
+    __weak IBOutlet UITextView *outputText;
+    
+    __weak IBOutlet UILabel *process_label;
+    __weak IBOutlet UILabel *result_label;
 }
 
 @end
@@ -21,6 +24,9 @@
     [super viewDidLoad];
     self.speechToTextObj = [[SpeechToTextModule alloc] initWithCustomDisplay:@"SineWaveViewController"];
     [self.speechToTextObj setDelegate:self];
+    NSTimer *timer=[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(scrollTextToBottom) userInfo:nil repeats:YES];
+    [timer setFireDate:[NSDate distantPast]];
+    [self setBackgroundmode];
 }
 
 - (void)didReceiveMemoryWarning
@@ -28,6 +34,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)setBackgroundmode
+{
+    self.view.backgroundColor=[Data sharedInstance].mainView;
+    outputText.backgroundColor=[Data sharedInstance].textView;
+    voiceText.textColor=[Data sharedInstance].viewText;
+    outputText.textColor=[Data sharedInstance].labelText;
+    process_label.textColor=[Data sharedInstance].viewText;
+    result_label.textColor=[Data sharedInstance].viewText;
+    voiceText.backgroundColor=[Data sharedInstance].voiceView;
+}
+
 #pragma mark - My IBActions -
 - (IBAction)recordSpeechButtonTapped:(UIButton *)sender
 {
@@ -38,6 +56,7 @@
 {
     NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"responseString: %@",responseString);
+    outputText.text=[outputText.text stringByAppendingFormat:@"%@\n",responseString];
     NSRange range = [responseString rangeOfString:@"\n"];
     NSString *finalSpeech;
     if (range.location != NSNotFound)
@@ -50,17 +69,22 @@
         NSDictionary *speech = [[[arrResult objectAtIndex:0] valueForKey:@"alternative"]objectAtIndex:0];
         finalSpeech = [speech objectForKey:@"transcript"];
     }
-    [voiceText setText:finalSpeech];
-    [self.speechToTextObj CheckList:finalSpeech];
+    voiceText.text=[voiceText.text stringByAppendingFormat:@"%@\n",finalSpeech];
     return YES;
 }
-- (void)showLoadingView
+
+-(void)scrollTextToBottom
 {
-    NSLog(@"show loadingView");
-}
-- (void)requestFailedWithError:(NSError *)error
-{
-    NSLog(@"error: %@",error);
+    if(outputText.text.length>0)
+    {
+        NSRange bottom=NSMakeRange(outputText.text.length-1, 1);
+        [outputText scrollRangeToVisible:bottom];
+    }
+    if(voiceText.text.length>0)
+    {
+        NSRange bottom=NSMakeRange(voiceText.text.length-1, 1);
+        [voiceText scrollRangeToVisible:bottom];
+    }
 }
 
 

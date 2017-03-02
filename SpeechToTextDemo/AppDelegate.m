@@ -2,8 +2,6 @@
 //  AppDelegate.m
 //  SpeechToTextDemo
 //
-//  Created by Muhammad Zeeshan on 12/15/13.
-//  Copyright (c) 2013 Muhammad Zeeshan. All rights reserved.
 //
 
 #import "AppDelegate.h"

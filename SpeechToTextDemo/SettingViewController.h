@@ -2,8 +2,7 @@
 //  SettingViewController.h
 //  IOSClient
 //
-//  Created by Vian on 2017-02-15.
-//  Copyright © 2017 Muhammad Zeeshan. All rights reserved.
+//  Created by JUNWEI WU on 2017-02-15.
 //
 #import <UIKit/UIKit.h>
 #import "Data.h"
