@@ -14,7 +14,7 @@
 		926777521E54CA3100930A71 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 926777511E54CA3100930A71 /* SettingViewController.m */; };
 		926777541E54CA4400930A71 /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 926777531E54CA4400930A71 /* ConnectionViewController.m */; };
 		926777581E54CAAB00930A71 /* Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 926777571E54CAAB00930A71 /* Data.m */; };
-		927F610C1E68B4CB00A0DD0B /* Connect.m in Sources */ = {isa = PBXBuildFile; fileRef = 927F610B1E68B4CB00A0DD0B /* Connect.m */; };
+		927F61101E68E3CE00A0DD0B /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 927F610F1E68E3CE00A0DD0B /* Connection.m */; };
 		B33E33B3185E27C5005962B9 /* SpeechToTextModule.m in Sources */ = {isa = PBXBuildFile; fileRef = B33E33AE185E27C5005962B9 /* SpeechToTextModule.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B33E33B4185E27C5005962B9 /* SineWaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B33E33B0185E27C5005962B9 /* SineWaveViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B33E33B5185E27C5005962B9 /* WaveDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = B33E33B2185E27C5005962B9 /* WaveDisplay.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -56,8 +56,8 @@
 		926777551E54CA4E00930A71 /* ConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionViewController.h; sourceTree = "<group>"; };
 		926777561E54CAA300930A71 /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		926777571E54CAAB00930A71 /* Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data.m; sourceTree = "<group>"; };
-		927F610B1E68B4CB00A0DD0B /* Connect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connect.m; sourceTree = "<group>"; };
-		927F610D1E68B4DD00A0DD0B /* Connect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connect.h; sourceTree = "<group>"; };
+		927F610E1E68E3BE00A0DD0B /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
+		927F610F1E68E3CE00A0DD0B /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connection.m; sourceTree = "<group>"; };
 		B33E33AD185E27C5005962B9 /* SpeechToTextModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeechToTextModule.h; sourceTree = "<group>"; };
 		B33E33AE185E27C5005962B9 /* SpeechToTextModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeechToTextModule.m; sourceTree = "<group>"; };
 		B33E33AF185E27C5005962B9 /* SineWaveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SineWaveViewController.h; sourceTree = "<group>"; };
@@ -114,8 +114,8 @@
 			children = (
 				926777561E54CAA300930A71 /* Data.h */,
 				926777571E54CAAB00930A71 /* Data.m */,
-				927F610D1E68B4DD00A0DD0B /* Connect.h */,
-				927F610B1E68B4CB00A0DD0B /* Connect.m */,
+				927F610E1E68E3BE00A0DD0B /* Connection.h */,
+				927F610F1E68E3CE00A0DD0B /* Connection.m */,
 			);
 			name = "Data references";
 			path = IOSClientView;
@@ -307,11 +307,11 @@
 			files = (
 				B3FFFF5F185E0B390008EC39 /* ViewController.m in Sources */,
 				B33E33B3185E27C5005962B9 /* SpeechToTextModule.m in Sources */,
+				927F61101E68E3CE00A0DD0B /* Connection.m in Sources */,
 				B33E33B4185E27C5005962B9 /* SineWaveViewController.m in Sources */,
 				B33E33B5185E27C5005962B9 /* WaveDisplay.m in Sources */,
 				B3FFFF59185E0B390008EC39 /* AppDelegate.m in Sources */,
 				926777581E54CAAB00930A71 /* Data.m in Sources */,
-				927F610C1E68B4CB00A0DD0B /* Connect.m in Sources */,
 				926777541E54CA4400930A71 /* ConnectionViewController.m in Sources */,
 				B3FFFF55185E0B390008EC39 /* main.m in Sources */,
 				9267774E1E54CA0100930A71 /* MainMenuViewController.m in Sources */,

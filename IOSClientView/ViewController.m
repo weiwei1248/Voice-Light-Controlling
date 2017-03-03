@@ -38,12 +38,8 @@
 -(void)setBackgroundmode
 {
     self.view.backgroundColor=[Data sharedInstance].mainView;
-    outputText.backgroundColor=[Data sharedInstance].textView;
-    voiceText.textColor=[Data sharedInstance].viewText;
-    outputText.textColor=[Data sharedInstance].labelText;
-    process_label.textColor=[Data sharedInstance].viewText;
-    result_label.textColor=[Data sharedInstance].viewText;
-    voiceText.backgroundColor=[Data sharedInstance].voiceView;
+    process_label.textColor=[Data sharedInstance].labelText;
+    result_label.textColor=[Data sharedInstance].labelText;
 }
 
 #pragma mark - My IBActions -

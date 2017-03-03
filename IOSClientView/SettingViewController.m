@@ -37,8 +37,8 @@
 -(void)setBackgroundmode
 {
     self.view.backgroundColor=[Data sharedInstance].mainView;
-    languge_label.textColor=[Data sharedInstance].viewText;
-    mode_label.textColor=[Data sharedInstance].viewText;
+    languge_label.textColor=[Data sharedInstance].labelText;
+    mode_label.textColor=[Data sharedInstance].labelText;
 }
 
 - (IBAction) changeLanguage{

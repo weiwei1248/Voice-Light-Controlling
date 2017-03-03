@@ -9,11 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "SpeechToTextModule.h"
 #import "Data.h"
-@interface ConnectionViewController : UIViewController  <NSStreamDelegate,SpeechToTextModuleDelegate>
-{
-    @public
-}
--(void)stream:(NSStream *)theStream handleEvent:(NSStreamEvent)streamEvent;
+#import "Connection.h"
+@interface ConnectionViewController : UIViewController  <SpeechToTextModuleDelegate>
+
 @property(nonatomic, strong)SpeechToTextModule *speechToTextObj;
 
 -(void)scrollTextToBottom;

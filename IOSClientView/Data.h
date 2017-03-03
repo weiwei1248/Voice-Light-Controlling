@@ -12,10 +12,7 @@
     int language_select;
     int mode_select;
     UIColor *mainView;
-    UIColor *textView;
-    UIColor *viewText;
     UIColor *labelText;
-    UIColor *voiceView;
     
     NSString *ip_address;
     int port_address;
@@ -27,10 +24,7 @@
 @property (nonatomic) int language_select;
 @property (nonatomic) int mode_select;
 @property (strong,nonatomic) UIColor *mainView;
-@property (strong,nonatomic) UIColor *textView;
-@property (strong,nonatomic) UIColor *viewText;
 @property (strong,nonatomic) UIColor *labelText;
-@property (strong,nonatomic) UIColor *voiceView;
 @property (strong,nonatomic) NSString *ip_address;
 @property (strong,nonatomic) NSString *outputString;
 @property (strong,nonatomic) NSString *voiceString;
