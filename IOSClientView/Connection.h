@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Data.h"
+#import "Tool.h"
 
 @interface Connection : NSObject <NSStreamDelegate>
 {

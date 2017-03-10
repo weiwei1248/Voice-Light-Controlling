@@ -334,49 +334,49 @@ static void DeriveBufferSize (AudioQueueRef audioQueue, AudioStreamBasicDescript
     if([delegate respondsToSelector:@selector(requestFailedWithError:)])
         [delegate requestFailedWithError:error];
 }
--(void)CheckList:(NSString  *)voice
-{
-    switch ([Data sharedInstance].language_select)
-    {
-        case 0:
-            if(([voice rangeOfString:@"open"].location!=NSNotFound)||([voice rangeOfString:@"on"].location!=NSNotFound)||([voice rangeOfString:@"up"].location!=NSNotFound))
-            {
-                
-                NSLog(@"The light will turn on");
-            }
-            else if(([voice rangeOfString:@"close"].location!=NSNotFound)||([voice rangeOfString:@"down"].location!=NSNotFound)||([voice rangeOfString:@"off"].location!=NSNotFound))
-            {
-                
-                NSLog(@"The light will turn off");
-            }
-            else
-            {
-                
-                NSLog(@"No such command!");
-            }
-
-            break;
-        case 1:
-            if(([voice rangeOfString:@"开"].location!=NSNotFound)||([voice rangeOfString:@"亮"].location!=NSNotFound))
-            {
-                
-                NSLog(@"The light will turn on");
-            }
-            else if(([voice rangeOfString:@"关"].location!=NSNotFound)||([voice rangeOfString:@"灭"].location!=NSNotFound))
-            {
-                NSLog(@"The light will turn off");
-            }
-            else
-            {
-                
-                NSLog(@"No such command!");
-            }
-            
-            break;
-            
-        default:
-            break;
-    }
-    
-}
+//-(void)CheckList:(NSString  *)voice
+//{
+//    switch ([Data sharedInstance].language_select)
+//    {
+//        case 0:
+//            if(([voice rangeOfString:@"open"].location!=NSNotFound)||([voice rangeOfString:@"on"].location!=NSNotFound)||([voice rangeOfString:@"up"].location!=NSNotFound))
+//            {
+//                
+//                NSLog(@"The light will turn on");
+//            }
+//            else if(([voice rangeOfString:@"close"].location!=NSNotFound)||([voice rangeOfString:@"down"].location!=NSNotFound)||([voice rangeOfString:@"off"].location!=NSNotFound))
+//            {
+//                
+//                NSLog(@"The light will turn off");
+//            }
+//            else
+//            {
+//                
+//                NSLog(@"No such command!");
+//            }
+//
+//            break;
+//        case 1:
+//            if(([voice rangeOfString:@"开"].location!=NSNotFound)||([voice rangeOfString:@"亮"].location!=NSNotFound))
+//            {
+//                
+//                NSLog(@"The light will turn on");
+//            }
+//            else if(([voice rangeOfString:@"关"].location!=NSNotFound)||([voice rangeOfString:@"灭"].location!=NSNotFound))
+//            {
+//                NSLog(@"The light will turn off");
+//            }
+//            else
+//            {
+//                
+//                NSLog(@"No such command!");
+//            }
+//            
+//            break;
+//            
+//        default:
+//            break;
+//    }
+//    
+//}
 @end
