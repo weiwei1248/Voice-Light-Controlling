@@ -13,6 +13,8 @@
     
     __weak IBOutlet UILabel *process_label;
     __weak IBOutlet UILabel *result_label;
+    
+    UITextField *waveField;
 }
 
 @end
@@ -22,6 +24,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    waveField = [[UITextField alloc] initWithFrame:CGRectZero];
+    [waveField setHidden:YES];
+    [self.view addSubview:waveField];
+    
     self.speechToTextObj = [[SpeechToTextModule alloc] initWithCustomDisplay:@"SineWaveViewController"];
     [self.speechToTextObj setDelegate:self];
     NSTimer *timer=[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(scrollTextToBottom) userInfo:nil repeats:YES];
@@ -82,7 +89,15 @@
         [voiceText scrollRangeToVisible:bottom];
     }
 }
-
+- (void)showSineWaveView:(SineWaveViewController *)view
+{
+    [waveField setInputView:view.view];
+    [waveField becomeFirstResponder];
+}
+- (void)dismissSineWaveView:(SineWaveViewController *)view cancelled:(BOOL)wasCancelled
+{
+    [waveField resignFirstResponder];
+}
 
 @end
 

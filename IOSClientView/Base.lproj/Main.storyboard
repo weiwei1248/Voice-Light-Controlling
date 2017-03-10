@@ -21,14 +21,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nsn-wO-5ch">
-                                <rect key="frame" x="153" y="514" width="81" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Speeking"/>
-                                <connections>
-                                    <action selector="recordSpeechButtonTapped:" destination="vcG-Wa-PJR" eventType="touchUpInside" id="XQO-B1-uc9"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDh-sa-V7g">
                                 <rect key="frame" x="32" y="147" width="343" height="173"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -78,6 +70,14 @@
                                 <state key="normal" title="Setting"/>
                                 <connections>
                                     <segue destination="1iF-mv-Fpu" kind="modal" id="EsI-ep-gXA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nsn-wO-5ch">
+                                <rect key="frame" x="147" y="88" width="81" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Speeking"/>
+                                <connections>
+                                    <action selector="recordSpeechButtonTapped:" destination="vcG-Wa-PJR" eventType="touchUpInside" id="XQO-B1-uc9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -356,7 +356,7 @@
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="t6u-Ex-6sj"/>
-        <segue reference="rNy-T4-fsS"/>
+        <segue reference="EuT-5H-7kv"/>
+        <segue reference="EsI-ep-gXA"/>
     </inferredMetricsTieBreakers>
 </document>
