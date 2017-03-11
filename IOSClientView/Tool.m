@@ -48,6 +48,7 @@
                     else if([voice isEqualToString:@"Recogonize failed."])
                     {
                         result=@"2";
+                        return result;
                     }
                     break;
                 case 1://kitchen
@@ -64,10 +65,10 @@
                     else if([voice isEqualToString:@"Recogonize failed."])
                     {
                         result=@"2";
+                        return result;
                     }
                     break;
                 default:
-                    
                     break;
             }
         }
@@ -83,9 +84,10 @@
                 result=@"0";
                 close_count++;
             }
-            else if([voice isEqualToString:@"Recogonize failed."])
+            else if([voice containsString:@"Recogonize failed."])
             {
                 result=@"2";
+                return result;
             }
         }
     }
