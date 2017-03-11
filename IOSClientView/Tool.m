@@ -2,8 +2,7 @@
 //  Tool.m
 //  IOSClient
 //
-//  Created by Vian on 2017-03-10.
-//  Copyright © 2017 Muhammad Zeeshan. All rights reserved.
+//  Created by Junwei Wu on 2017-03-10.
 //
 
 #import "Tool.h"
@@ -23,13 +22,16 @@
 -(NSString *)REG_W:(NSString *)voice;
 {
     NSString *result=@"2";
+    NSMutableArray *shine=[[NSMutableArray alloc]initWithObjects:@"crazy",@"shine",@"shining",@"rock",nil];
     NSMutableArray *open=[[NSMutableArray alloc]initWithObjects:@"open",@"on",@"up", nil];
     NSMutableArray *close=[[NSMutableArray alloc]initWithObjects:@"close",@"off",@"down", nil];
-    NSMutableArray *place=[[NSMutableArray alloc]initWithObjects:@"bedroom",@"kitchen", nil];
-    int open_count=0;
-    int close_count=0;
+    NSMutableArray *place=[[NSMutableArray alloc]initWithObjects:@"bedroom",@"kitchen",@"all", nil];
+    int b_open_count=0;
+    int b_close_count=0;
+    int k_close_count=0;
+    int k_open_count=0;
     
-    for(int i=0;i<2;i++)
+    for(int i=0;i<MAX_LEN;i++)
     {
         if([voice containsString:place[i]])
         {
@@ -38,103 +40,102 @@
                     if([voice containsString:open[i]])
                     {
                         result=@"B";
-                        open_count++;
+                        b_open_count++;
                     }
                     else if ([voice containsString:close[i]])
                     {
                         result=@"b";
-                        close_count++;
+                        b_close_count++;
                     }
                     else if([voice isEqualToString:@"Recogonize failed."])
                     {
                         result=@"2";
-<<<<<<< HEAD
                         return result;
-=======
->>>>>>> 9bf44b096f19c1f7a0e37b2ec12aecebdb39ee42
                     }
                     break;
                 case 1://kitchen
                     if([voice containsString:open[i]])
                     {
                         result=@"A";
-                        open_count++;
+                        k_open_count++;
                     }
                     else if ([voice containsString:close[i]])
                     {
                         result=@"a";
-                        close_count++;
+                        k_close_count++;
                     }
                     else if([voice isEqualToString:@"Recogonize failed."])
                     {
                         result=@"2";
-<<<<<<< HEAD
+                        return result;
+                    }
+                    break;
+                case 2://all
+                    if([voice containsString:open[i]])
+                    {
+                        result=@"AB";
+                    }
+                    else if ([voice containsString:close[i]])
+                    {
+                        result=@"ab";
+                    }
+                    else if([voice isEqualToString:@"Recogonize failed."])
+                    {
+                        result=@"2";
                         return result;
                     }
                     break;
                 default:
-=======
-                    }
-                    break;
-                default:
-                    
->>>>>>> 9bf44b096f19c1f7a0e37b2ec12aecebdb39ee42
                     break;
             }
         }
         else
         {
-            if([voice containsString:open[i]])
+            if([voice containsString:@"enable"])
             {
                 result=@"1";
-                open_count++;
             }
-            else if ([voice containsString:close[i]])
+            else if ([voice containsString:@"disable"])
             {
                 result=@"0";
-                close_count++;
             }
-<<<<<<< HEAD
+            else if ([voice containsString:shine[i]])
+            {
+                result=@"t";
+            }
             else if([voice containsString:@"Recogonize failed."])
             {
                 result=@"2";
                 return result;
-=======
-            else if([voice isEqualToString:@"Recogonize failed."])
-            {
-                result=@"2";
->>>>>>> 9bf44b096f19c1f7a0e37b2ec12aecebdb39ee42
             }
         }
     }
-//
-//    for(int i=0;i<MAX_LEN;i++)
-//    {
-//        if([voice containsString:open[i]])
-//        {
-//            result=@"1";
-//            open_count++;
-//        }
-//        else if ([voice containsString:close[i]])
-//        {
-//            result=@"0";
-//            close_count++;
-//        }
-//        else if([voice isEqualToString:@"Recogonize failed."])
-//        {
-//            result=@"2";
-//        }
-//    }
     
-    if((open_count>1||close_count>1)&&open_count!=close_count)
+    if((k_open_count>1||k_close_count>1||b_open_count>1||b_close_count>1)&&k_open_count!=k_close_count&&b_open_count!=b_close_count)
     {
-        if(open_count>close_count)
+        if(k_open_count>k_close_count)
         {
-            result=@"1";
+            result=@"A";
         }
-        else if(open_count<close_count)
+        else if(k_open_count<k_close_count)
         {
-            result=@"0";
+            result=@"a";
+        }
+        else if(k_open_count<b_open_count)
+        {
+            result=@"B";
+        }
+        else if(k_open_count>b_open_count)
+        {
+            result=@"A";
+        }
+        else if(b_open_count<b_close_count)
+        {
+            result=@"b";
+        }
+        else if(b_open_count>b_close_count)
+        {
+            result=@"B";
         }
     }
     NSLog(@"result = %@",result);
