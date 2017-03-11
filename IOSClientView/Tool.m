@@ -8,7 +8,7 @@
 #import "Tool.h"
 
 @implementation Tool
-#define MAX_LEN 3
+#define MAX_LEN 4
 -(id)init
 {
     if(self==[super init])
@@ -22,10 +22,10 @@
 -(NSString *)REG_W:(NSString *)voice;
 {
     NSString *result=@"2";
-    NSMutableArray *shine=[[NSMutableArray alloc]initWithObjects:@"crazy",@"shine",@"shining",@"rock",nil];
-    NSMutableArray *open=[[NSMutableArray alloc]initWithObjects:@"open",@"on",@"up", nil];
-    NSMutableArray *close=[[NSMutableArray alloc]initWithObjects:@"close",@"off",@"down", nil];
-    NSMutableArray *place=[[NSMutableArray alloc]initWithObjects:@"bedroom",@"kitchen",@"all", nil];
+    NSMutableArray *shine=[[NSMutableArray alloc]initWithObjects:@"crazy",@"shine",@"shining",@"rock"@"dance",nil];
+    NSMutableArray *open=[[NSMutableArray alloc]initWithObjects:@"open",@"on",@"up",@"",@"", nil];
+    NSMutableArray *close=[[NSMutableArray alloc]initWithObjects:@"close",@"off",@"down",@"",@"", nil];
+    NSMutableArray *place=[[NSMutableArray alloc]initWithObjects:@"bedroom",@"kitchen",@"all",@"",@"", nil];
     int b_open_count=0;
     int b_close_count=0;
     int k_close_count=0;
