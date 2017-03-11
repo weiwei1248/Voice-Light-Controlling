@@ -88,7 +88,7 @@
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
         NSArray *arrResult = [dic objectForKey:@"result"];
         NSDictionary *speech = [[[arrResult objectAtIndex:0] valueForKey:@"alternative"]objectAtIndex:0];
-        finalSpeech = [speech objectForKey:@"transcript"];
+        finalSpeech = [[speech objectForKey:@"transcript"] lowercaseString];
     }
     
     [Data sharedInstance].voiceString=[text_Voice.text stringByAppendingFormat:@"%@\n", finalSpeech];
