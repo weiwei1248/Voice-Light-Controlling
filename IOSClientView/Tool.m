@@ -29,66 +29,84 @@
     int open_count=0;
     int close_count=0;
     
-//    for(int i=0;i<2;i++)
-//    {
-//        if([voice containsString:place[i]])
-//        {
-//            switch (i) {
-//                case 0://bedroom
-//                    if([voice containsString:open[i]])
-//                    {
-//                        result=@"B";
-//                        open_count++;
-//                    }
-//                    else if ([voice containsString:close[i]])
-//                    {
-//                        result=@"b";
-//                        close_count++;
-//                    }
-//                    else if([voice isEqualToString:@"Recogonize failed."])
-//                    {
-//                        result=@"2";
-//                    }
-//                    break;
-//                case 1://kitchen
-//                    if([voice containsString:open[i]])
-//                    {
-//                        result=@"A";
-//                        open_count++;
-//                    }
-//                    else if ([voice containsString:close[i]])
-//                    {
-//                        result=@"a";
-//                        close_count++;
-//                    }
-//                    else if([voice isEqualToString:@"Recogonize failed."])
-//                    {
-//                        result=@"2";
-//                    }
-//                    break;
-//                default:
-//                    break;
-//            }
-//        }
-//    }
-    
-    for(int i=0;i<MAX_LEN;i++)
+    for(int i=0;i<2;i++)
     {
-        if([voice containsString:open[i]])
+        if([voice containsString:place[i]])
         {
-            result=@"1";
-            open_count++;
+            switch (i) {
+                case 0://bedroom
+                    if([voice containsString:open[i]])
+                    {
+                        result=@"B";
+                        open_count++;
+                    }
+                    else if ([voice containsString:close[i]])
+                    {
+                        result=@"b";
+                        close_count++;
+                    }
+                    else if([voice isEqualToString:@"Recogonize failed."])
+                    {
+                        result=@"2";
+                    }
+                    break;
+                case 1://kitchen
+                    if([voice containsString:open[i]])
+                    {
+                        result=@"A";
+                        open_count++;
+                    }
+                    else if ([voice containsString:close[i]])
+                    {
+                        result=@"a";
+                        close_count++;
+                    }
+                    else if([voice isEqualToString:@"Recogonize failed."])
+                    {
+                        result=@"2";
+                    }
+                    break;
+                default:
+                    
+                    break;
+            }
         }
-        else if ([voice containsString:close[i]])
+        else
         {
-            result=@"0";
-            close_count++;
-        }
-        else if([voice isEqualToString:@"Recogonize failed."])
-        {
-            result=@"2";
+            if([voice containsString:open[i]])
+            {
+                result=@"1";
+                open_count++;
+            }
+            else if ([voice containsString:close[i]])
+            {
+                result=@"0";
+                close_count++;
+            }
+            else if([voice isEqualToString:@"Recogonize failed."])
+            {
+                result=@"2";
+            }
         }
     }
+//
+//    for(int i=0;i<MAX_LEN;i++)
+//    {
+//        if([voice containsString:open[i]])
+//        {
+//            result=@"1";
+//            open_count++;
+//        }
+//        else if ([voice containsString:close[i]])
+//        {
+//            result=@"0";
+//            close_count++;
+//        }
+//        else if([voice isEqualToString:@"Recogonize failed."])
+//        {
+//            result=@"2";
+//        }
+//    }
     
     if((open_count>1||close_count>1)&&open_count!=close_count)
     {
