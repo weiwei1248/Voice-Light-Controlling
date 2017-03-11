@@ -48,7 +48,10 @@
                     else if([voice isEqualToString:@"Recogonize failed."])
                     {
                         result=@"2";
+<<<<<<< HEAD
                         return result;
+=======
+>>>>>>> 9bf44b096f19c1f7a0e37b2ec12aecebdb39ee42
                     }
                     break;
                 case 1://kitchen
@@ -65,10 +68,17 @@
                     else if([voice isEqualToString:@"Recogonize failed."])
                     {
                         result=@"2";
+<<<<<<< HEAD
                         return result;
                     }
                     break;
                 default:
+=======
+                    }
+                    break;
+                default:
+                    
+>>>>>>> 9bf44b096f19c1f7a0e37b2ec12aecebdb39ee42
                     break;
             }
         }
@@ -84,10 +94,16 @@
                 result=@"0";
                 close_count++;
             }
+<<<<<<< HEAD
             else if([voice containsString:@"Recogonize failed."])
             {
                 result=@"2";
                 return result;
+=======
+            else if([voice isEqualToString:@"Recogonize failed."])
+            {
+                result=@"2";
+>>>>>>> 9bf44b096f19c1f7a0e37b2ec12aecebdb39ee42
             }
         }
     }
