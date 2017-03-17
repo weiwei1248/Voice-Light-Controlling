@@ -2,9 +2,8 @@
 //  Tool.h
 //  IOSClient
 //
-//  Created by Vian on 2017-03-10.
-//  Copyright © 2017 Muhammad Zeeshan. All rights reserved.
-//
+//  Created by Junwei Wu on 2017-03-10.
+//  This is to translate voice to commands
 
 #import <Foundation/Foundation.h>
 #import "Tool.h"

@@ -2,9 +2,8 @@
 //  Connection.h
 //  IOSClient
 //
-//  Created by Vian on 2017-03-02.
-//  Copyright © 2017 Muhammad Zeeshan. All rights reserved.
-//
+//  Created by Junwei Wu on 2017-03-02.
+//  This is for TCP connection
 
 #import <Foundation/Foundation.h>
 #import "Data.h"

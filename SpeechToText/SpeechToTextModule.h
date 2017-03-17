@@ -3,7 +3,7 @@
 //  AstridiPhone
 //
 //  Created by JUNWEI WU on 2017-02-15.
-//
+//  Including method of voice recogonization and API key installing
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -72,17 +72,11 @@ typedef struct AQRecorderState {
 @property (readonly) BOOL recording;
 @property (assign) id<SpeechToTextModuleDelegate> delegate;
 
-/* Caller can pass a non-nil nib name to specify the nib with which to create
- a SineWaveViewController (nib should conform to the spec in the SineWaveViewController
- interface). A nil argument will cause the module to display an alert view instead
- of the custom view controller. */
 - (id)initWithCustomDisplay:(NSString *)nibName;
 
 // Begins a voice recording
 - (void)beginRecording;
 
-// Stops a voice recording. The startProcessing parameter is intended for internal use,
-// so don't pass NO unless you really mean it.
 - (void)stopRecording:(BOOL)startProcessing;
 -(void)CheckList:(NSString  *)voice;
 @end

@@ -3,7 +3,7 @@
 //  IOSClient
 //
 //  Created by JUNWEI WU on 2017-02-15.
-//
+//  Including TCP connection and voice recording
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>

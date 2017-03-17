@@ -3,20 +3,20 @@
 //  IOSClient
 //
 //  Created by JUNWEI WU on 2017-02-15.
-//
+//  This is for statistics saving 
 
 #import <Foundation/Foundation.h>
 
 @interface Data : NSObject
 {
-    int language_select;
-    int mode_select;
+    int language_select;            //language status
+    int mode_select;                //interface mode status
     UIColor *mainView;
     UIColor *labelText;
     
-    NSString *ip_address;
+    NSString *ip_address;           //for tcp Connection
     int port_address;
-    BOOL isConnect;
+    BOOL isConnect;                 //connection status
     
     NSString *outputString;
     NSString *voiceString;
